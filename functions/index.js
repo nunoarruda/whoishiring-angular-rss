@@ -1,8 +1,9 @@
 const functions = require('firebase-functions');
-const admin = require('firebase-admin');
+const admin = require('firebase-admin'); 
 const RSS = require('rss');
+const fs = require('fs');
 
-admin.initializeApp(functions.config().firebase);
+admin.initializeApp(functions.config().firebase); 
 
 exports.rss = functions.https.onRequest((functionsRequest, functionsResponse) => {
     const feed = new RSS({
@@ -11,13 +12,9 @@ exports.rss = functions.https.onRequest((functionsRequest, functionsResponse) =>
         site_url: 'https://us-central1-hiring-remote.cloudfunctions.net'
     });
 
-    admin.database().ref('/').limitToLast(100).once('value', snapshot => {
-        const comments = [];
-
-        snapshot.forEach(child => {
-            comments.push(child.val());
-        });
-
+    fs.readFile('./data.json', 'utf8', (err, data) => {
+        const comments = JSON.parse(data);
+        
         // sort comments by time
         comments.sort((a, b) => b.time - a.time);
 
@@ -26,8 +23,7 @@ exports.rss = functions.https.onRequest((functionsRequest, functionsResponse) =>
             feed.item({
                 title: `Comment by ${comment.by}`,
                 url: `https://news.ycombinator.com/item?id=${comment.id}`,
-                date: new Date(comment.time * 1000), // Unix time (seconds) to milliseconds
-                description: comment.text
+                date: new Date(comment.time * 1000) // Unix time (seconds) to milliseconds
             });
         });
 
