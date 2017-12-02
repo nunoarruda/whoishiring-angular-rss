@@ -89,7 +89,7 @@ const saveJob = comment => {
 const generateJSON = () => {
     console.log('Generating JSON file...');
 
-    fs.writeFile('functions/data.json', JSON.stringify(jobs), err => {
+    fs.writeFile(__dirname + '/functions/data.json', JSON.stringify(jobs), err => {
         if (err) return console.log('Error while trying to write file', err);
         console.log('JSON file generated!');
         deploy();
