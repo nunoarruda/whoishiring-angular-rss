@@ -92,19 +92,20 @@ const generateJSON = () => {
     fs.writeFile('functions/data.json', JSON.stringify(jobs), err => {
         if (err) return console.log('Error while trying to write file', err);
         console.log('JSON file generated!');
-        console.log('Deploying...');
         deploy();
     });
 }
 
 const deploy = () => {
+    console.log('Deploying...');
+
     client.deploy({
         project: 'hiring-remote',
         token: '1/b8Dx6Ptqdz1iNFrdlTRyaM-u5CB0qaENTOH1JEyhBvA',
-        cwd: './'
+        cwd: process.cwd()
     }).then(() => {
-        console.log('Rules have been deployed!')
-        console.log('Repeating in 5 minutes...')
+        console.log('Rules have been deployed!');
+        console.log('Repeating in 5 minutes...');
         setTimeout(getSubmissions, 300000);
     }).catch(err => {
         console.log({err});
