@@ -106,6 +106,7 @@ const deploy = () => {
     }).then(() => {
         console.log('Rules have been deployed!');
         console.log('Repeating in 5 minutes...');
+        jobs = [];
         setTimeout(getSubmissions, 300000);
     }).catch(err => {
         console.log({err});
