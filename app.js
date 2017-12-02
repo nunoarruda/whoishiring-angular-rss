@@ -102,7 +102,7 @@ const deploy = () => {
     client.deploy({
         project: 'hiring-remote',
         token: '1/b8Dx6Ptqdz1iNFrdlTRyaM-u5CB0qaENTOH1JEyhBvA',
-        cwd: process.cwd()
+        cwd: __dirname
     }).then(() => {
         console.log('Rules have been deployed!');
         console.log('Repeating in 5 minutes...');
