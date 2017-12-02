@@ -1,5 +1,3 @@
-import { setTimeout } from 'timers';
-
 const https = require('https');
 const fs = require('fs');
 const client = require('firebase-tools');
