@@ -2,9 +2,9 @@
   "name": "hiring-remote-rss",
   "version": "1.0.0",
   "description": "[RSS feed](https://us-central1-hiring-remote.cloudfunctions.net/rss) of remote job posts from [Ask HN: Who is hiring?](https://news.ycombinator.com/submitted?id=whoishiring)",
-  "main": "generateJSON.js",
+  "main": "app.js",
   "scripts": {
-    "start": "node generateJSON.js",
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
