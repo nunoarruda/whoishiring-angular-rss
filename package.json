@@ -18,6 +18,6 @@
   },
   "homepage": "https://github.com/nunoarruda/hiring-remote-rss#readme",
   "dependencies": {
-    "firebase-tools": "3.17.4"
+    "firebase-tools": "3.17.6"
   }
 }
