@@ -5,17 +5,17 @@ const RSS = require('rss');
 
 admin.initializeApp(functions.config().firebase);
 
-const db = admin.firestore();
-const commentsCol = db.collection('comments');
-const infoCol = db.collection('info');
-
-const feed = new RSS({
-    title: 'HN Hiring Remote RSS',
-    feed_url: 'https://us-central1-hiring-remote.cloudfunctions.net/rss',
-    site_url: 'https://us-central1-hiring-remote.cloudfunctions.net'
-});
-
 exports.rss = functions.https.onRequest((functionsRequest, functionsResponse) => {
+    const db = admin.firestore();
+    const commentsCol = db.collection('comments');
+    const infoCol = db.collection('info');
+    
+    const feed = new RSS({
+        title: 'HN Hiring Remote RSS',
+        feed_url: 'https://us-central1-hiring-remote.cloudfunctions.net/rss',
+        site_url: 'https://us-central1-hiring-remote.cloudfunctions.net'
+    });
+
     // STEP 1
     // Get whoishiring's submissions 
     const getSubmissions = () => {
