@@ -79,8 +79,7 @@ exports.rss = functions.https.onRequest((functionsRequest, functionsResponse) =>
                     serveRSS();
                 }
             } else {
-                const tempIds = ids.slice(ids.length - 5);
-                getComment(tempIds, 0);
+                getComment(ids, 0);
             }
         });
     };
