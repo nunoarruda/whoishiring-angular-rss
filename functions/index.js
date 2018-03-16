@@ -91,16 +91,16 @@ exports.rss = functions.https.onRequest((functionsRequest, functionsResponse) =>
             if (!error && response.statusCode == 200) {
                 const comment = JSON.parse(body);
 
-                if (comment.text && /\bremote\b/i.test(comment.text)) {
-                    console.log(comment.id + ' remote');
+                if (comment.text && /\b(angular|angularjs)\b/i.test(comment.text)) {
+                    console.log(comment.id + ' angular');
 
-                    saveRemoteJob({
+                    saveAngularJob({
                         id: comment.id,
                         by: comment.by,
                         time: new Date(comment.time * 1000) // Unix time (seconds) to milliseconds
                     });
                 } else {
-                    console.log(comment.id + ' not remote');
+                    console.log(comment.id + ' no angular');
                 }
 
                 if (++index < ids.length) {
@@ -119,8 +119,8 @@ exports.rss = functions.https.onRequest((functionsRequest, functionsResponse) =>
     };
 
     // STEP 6
-    // Save remote job to database
-    const saveRemoteJob = obj => {
+    // Save Angular job to database
+    const saveAngularJob = obj => {
         commentsCol.doc(`${obj.id}`).set({ by: obj.by, time: obj.time })
             .then(() => console.log('Job saved successfully to DB'))
             .catch(error => console.log('Job could not be saved to DB' + error));
