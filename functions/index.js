@@ -3,7 +3,7 @@ const admin = require('firebase-admin');
 const request = require('request');
 const RSS = require('rss');
 
-admin.initializeApp(functions.config().firebase);
+admin.initializeApp();
 
 exports.rss = functions.https.onRequest((functionsRequest, functionsResponse) => {
     const db = admin.firestore();
