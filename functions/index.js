@@ -90,24 +90,27 @@ exports.rss = functions.https.onRequest((functionsRequest, functionsResponse) =>
         request(`https://hacker-news.firebaseio.com/v0/item/${ids[index]}.json`, (error, response, body) => {
             if (!error && response.statusCode == 200) {
                 const comment = JSON.parse(body);
+                if (comment && comment.text) {
+                    if (/\b(angular|angularjs)\b/i.test(comment.text)) {
+                        console.log(comment.id + ' angular');
 
-                if (comment.text && /\b(angular|angularjs)\b/i.test(comment.text)) {
-                    console.log(comment.id + ' angular');
-
-                    saveAngularJob({
-                        id: comment.id,
-                        by: comment.by,
-                        time: new Date(comment.time * 1000) // Unix time (seconds) to milliseconds
-                    });
+                        saveAngularJob({
+                            id: comment.id,
+                            by: comment.by,
+                            time: new Date(comment.time * 1000) // Unix time (seconds) to milliseconds
+                        });
+                    } else {
+                        console.log(comment.id + ' no angular');
+                    }
                 } else {
-                    console.log(comment.id + ' no angular');
+                    console.log(`${ids[index]} comment is falsy, moving on...`);
                 }
 
                 if (++index < ids.length) {
                     getComment(ids, index);
                 } else {
                     // Last iteration
-                    saveLastCommentFetched(comment.id);
+                    saveLastCommentFetched(ids[--index]);
                     serveRSS();
                 }
             } else {
