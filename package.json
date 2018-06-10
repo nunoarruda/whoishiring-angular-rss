@@ -1,5 +1,5 @@
 {
-  "name": "hiring-remote-rss",
+  "name": "whoishiring-angular-rss",
   "version": "1.0.0",
   "description": "[RSS feed](https://us-central1-hiring-remote.cloudfunctions.net/rss) of remote job posts from [Ask HN: Who is hiring?](https://news.ycombinator.com/submitted?id=whoishiring)",
   "main": "app.js",
@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nunoarruda/hiring-remote-rss.git"
+    "url": "git+https://github.com/nunoarruda/whoishiring-angular-rss.git"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/nunoarruda/hiring-remote-rss/issues"
+    "url": "https://github.com/nunoarruda/whoishiring-angular-rss/issues"
   },
-  "homepage": "https://github.com/nunoarruda/hiring-remote-rss#readme",
+  "homepage": "https://github.com/nunoarruda/whoishiring-angular-rss#readme",
   "dependencies": {
-    "firebase-tools": "3.18.0"
+    "firebase-tools": "3.18.6"
   }
 }
