@@ -13,10 +13,12 @@
   "dependencies": {
     "firebase-admin": "~5.12.1",
     "firebase-functions": "^1.0.4",
-    "request": "^2.87.0",
+    "hacker-news-api-types": "^1.0.0",
+    "node-fetch": "^2.1.2",
     "rss": "^1.2.2"
   },
   "devDependencies": {
+    "@types/node-fetch": "^2.1.1",
     "@types/rss": "0.0.28",
     "tslint": "^5.10.0",
     "typescript": "^2.9.1"
