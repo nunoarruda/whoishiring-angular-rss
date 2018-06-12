@@ -42,7 +42,7 @@ export const rss = functions.https.onRequest(async (request, response) => {
       console.log(saveLastCommentFetchedId);
     }
 
-    serveRSS(commentsCol, response);
+    await serveRSS(commentsCol, response);
   } catch (err) {
     console.error(err);
   }
