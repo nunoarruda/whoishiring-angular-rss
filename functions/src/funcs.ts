@@ -22,8 +22,7 @@ export const getHiringPost = async (posts: number[]) => {
   const response = await fetch(
     `https://hacker-news.firebaseio.com/v0/item/${posts[2]}.json`
   );
-  const post: IItem = await response.json();
-  return post;
+  return response.json() as Promise<IItem>;
 };
 
 /**
