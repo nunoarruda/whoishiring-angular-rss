@@ -117,7 +117,7 @@ export const serveRSS = async (
     feed.item({
       title: `Comment by ${comment.by}`,
       url: `https://news.ycombinator.com/item?id=${documentSnapshot.id}`,
-      date: comment.time,
+      date: comment.time.toDate(),
       description: "Open to see..."
     });
   });

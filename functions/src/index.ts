@@ -13,6 +13,8 @@ admin.initializeApp();
 
 export const rss = functions.https.onRequest(async (request, response) => {
   const db = admin.firestore();
+  db.settings({timestampsInSnapshots: true});
+
   const infoCol = db.collection("info");
   const commentsCol = db.collection("comments");
 
