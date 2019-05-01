@@ -16,11 +16,11 @@ export const getSubmissions = async () => {
 
 /**
  * Get the latest `Ask HN: Who is hiring?` post.
- * It's always the latest third post (index 2).
+ * It's always the first post (index 0).
  */
 export const getHiringPost = async (posts: number[]) => {
   const response = await fetch(
-    `https://hacker-news.firebaseio.com/v0/item/${posts[2]}.json`
+    `https://hacker-news.firebaseio.com/v0/item/${posts[0]}.json`
   );
   return response.json() as Promise<IItem>;
 };
