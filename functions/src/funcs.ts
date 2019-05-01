@@ -74,7 +74,7 @@ export const saveAngularJobs = (
     if (
       comment &&
       comment.text &&
-      /\b(angular|angularjs)\b/i.test(comment.text)
+      /\b(angular|ionic|nativescript)\b/i.test(comment.text)
     ) {
       console.log(comment.id + " angular");
 
