@@ -85,8 +85,10 @@ export const saveAngularJobs = (
           time: new Date(comment.time * 1000)
         })
       );
-    } else {
+    } else if (comment && comment.id) {
       console.log(comment.id + " no angular");
+    } else {
+      console.log("(null) no angular");
     }
   });
 
