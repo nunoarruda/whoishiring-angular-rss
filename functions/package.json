@@ -11,20 +11,20 @@
   },
   "main": "lib/index.js",
   "dependencies": {
-    "firebase-admin": "~8.9.1",
-    "firebase-functions": "^3.3.0",
+    "firebase-admin": "~8.12.1",
+    "firebase-functions": "^3.6.2",
     "hacker-news-api-types": "^1.0.1",
     "node-fetch": "^2.6.0",
     "rss": "^1.2.2"
   },
   "devDependencies": {
-    "@types/node-fetch": "^2.5.4",
+    "@types/node-fetch": "^2.5.7",
     "@types/rss": "0.0.28",
-    "tslint": "^5.20.1",
-    "typescript": "^3.7.5"
+    "tslint": "^6.1.2",
+    "typescript": "^3.9.5"
   },
   "private": true,
   "engines": {
-    "node": "8"
+    "node": "10"
   }
 }
