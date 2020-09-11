@@ -14,7 +14,7 @@
     "firebase-admin": "~9.0.0",
     "firebase-functions": "^3.8.0",
     "hacker-news-api-types": "^1.0.1",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^2.6.1",
     "rss": "^1.2.2"
   },
   "devDependencies": {
