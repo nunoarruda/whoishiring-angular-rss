@@ -18,6 +18,6 @@
   },
   "homepage": "https://github.com/nunoarruda/whoishiring-angular-rss#readme",
   "devDependencies": {
-    "firebase-tools": "^8.10.0"
+    "firebase-tools": "^9.1.0"
   }
 }
