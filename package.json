@@ -1,23 +1,19 @@
 {
   "name": "whoishiring-angular-rss",
-  "version": "1.0.0",
-  "description": "[RSS feed](https://us-central1-hiring-remote.cloudfunctions.net/rss) of remote job posts from [Ask HN: Who is hiring?](https://news.ycombinator.com/submitted?id=whoishiring)",
-  "main": "app.js",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "start": "node app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "deploy": "wrangler deploy",
+    "start": "wrangler dev"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/nunoarruda/whoishiring-angular-rss.git"
-  },
-  "author": "",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/nunoarruda/whoishiring-angular-rss/issues"
-  },
-  "homepage": "https://github.com/nunoarruda/whoishiring-angular-rss#readme",
   "devDependencies": {
-    "firebase-tools": "^9.1.0"
+    "@cloudflare/workers-types": "^4.20230821.0",
+    "@types/rss": "^0.0.30",
+    "hacker-news-api-types": "^2.0.0",
+    "typescript": "^5.2.2",
+    "wrangler": "^3.6.0"
+  },
+  "dependencies": {
+    "rss": "^1.2.2"
   }
 }
