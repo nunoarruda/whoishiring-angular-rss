@@ -11,7 +11,7 @@
     "@types/rss": "^0.0.31",
     "hacker-news-api-types": "^2.0.0",
     "typescript": "^5.2.2",
-    "wrangler": "^3.14.0"
+    "wrangler": "^3.19.0"
   },
   "dependencies": {
     "rss": "^1.2.2"
